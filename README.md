@@ -1,37 +1,87 @@
-# Developer & Project Management System
+# Developer Project Management System
 
-A Java-based console application for managing software developers and their projects.
-The system allows users to maintain developer profiles, assign projects, and track developer experience.
+A Java console-based application for managing software developers and their assigned projects.
 
-## 🚀 Features
+The system allows users to manage developer profiles, assign projects, and track developer experience using a menu-driven command-line interface.
 
-* Manage developer profiles
+---
 
-  * Add new developers
-  * Search developers by ID
-  * Update developer salary
-  * Delete developers
-  * List developers by programming language
+# System Architecture
 
-* Project management
+The system is designed following Object-Oriented Programming principles with separated modules for business logic, data models, utilities, and program control.
 
-  * Assign projects to developers
-  * View projects grouped by developer
-  * Calculate total developer experience (in months)
-  * Display projects ending in a specific year
+![UML Diagram](images/uml-diagram.png)
 
-* Data persistence
+The system contains several core components:
 
-  * Load developer and project data from files
-  * Save updated data back to files
+* **DeveloperManager** – handles developer-related operations
+* **ProjectManager** – manages project assignments
+* **ManagementSystem** – coordinates system operations
+* **FileUtils** – handles file input/output
+* **Inputter** – processes user input
+* **Menu** – provides the command-line interface
 
-* Utility features
+---
 
-  * Input validation
-  * Menu-driven command-line interface
-  * Sorting developers by salary
+# System Flow
 
-## 🛠️ Technologies Used
+The following diagram shows the program execution flow.
+
+![System Flow](images/system-flow.png)
+
+Program flow:
+
+1. Load data from text files
+2. Display the main menu
+3. User selects a function
+4. Execute the selected operation
+5. Optionally save data to files
+6. Exit the program
+
+---
+
+# Application Interface
+
+Example of the main menu displayed in the console:
+
+![Main Menu](images/main-menu.png)
+
+Users can perform multiple operations such as:
+
+* Manage developers
+* Manage projects
+* Calculate developer experience
+* Save and reload data
+
+---
+
+# Features
+
+## Developer Management
+
+* Add new developers
+* Search developer by ID
+* Update developer salary
+* Remove developer
+* List developers by programming language
+* Sort developers by salary
+
+## Project Management
+
+* Add new project
+* Assign project to developer
+* List projects grouped by developer
+* Calculate developer experience based on project duration
+* Display projects ending in a specific year
+
+## Data Persistence
+
+* Load data from text files
+* Save updated data to files
+
+---
+
+# Technologies Used
 
 * Java
 * Object-Oriented Programming (OOP)
@@ -39,65 +89,76 @@ The system allows users to maintain developer profiles, assign projects, and tra
 * Regular Expressions
 * CLI (Command Line Interface)
 
-## 📂 Project Structure
+---
+
+# Project Structure
 
 ```
 src
- ├── business
- │    ├── DeveloperManager.java
- │    ├── ProjectManager.java
- │    └── ManagementSystem.java
- │
- ├── model
- │    ├── Developer.java
- │    └── Project.java
- │
- ├── tools
- │    ├── Inputter.java
- │    ├── Menu.java
- │    ├── FileUtils.java
- │    └── Acceptable.java
- │
- └── main
-      └── Main.java
+│
+├── business
+│   ├── DeveloperManager.java
+│   ├── ProjectManager.java
+│   └── ManagementSystem.java
+│
+├── model
+│   ├── Developer.java
+│   └── Project.java
+│
+├── tools
+│   ├── Inputter.java
+│   ├── Menu.java
+│   ├── FileUtils.java
+│   └── Acceptable.java
+│
+└── main
+    └── Main.java
 ```
 
-## 📊 System Capabilities
+---
 
-* Developer validation with regex format `DEVxxx`
-* Salary validation
-* Project duration tracking
-* Start date validation
-* Data stored in text files
+# How to Run
 
-## ▶️ How to Run
-
-1. Clone the repository
+Clone the repository
 
 ```
-git clone https://github.com/your-username/developer-project-management-system.git
+git clone https://github.com/rainy2309/developer-project-management-system.git
 ```
 
-2. Open the project in **IntelliJ IDEA / NetBeans / VS Code**
+Open the project in any Java IDE:
 
-3. Run:
+* IntelliJ IDEA
+* NetBeans
+* VS Code
+
+Run:
 
 ```
 main/Main.java
 ```
 
-4. Use the console menu to interact with the system.
+---
 
-## 📚 Learning Objectives
+# Learning Objectives
 
 This project demonstrates:
 
 * Object-Oriented Programming design
-* Data validation
-* File-based persistence
-* Separation of concerns (Model – Business – Tools)
-* Menu-driven CLI applications
+* Input validation using Regex
+* File-based data persistence
+* Modular system architecture
+* Menu-driven console applications
 
-## 👨‍💻 Author
+---
 
-Student project for practicing **Java OOP and basic system design**.
+# Future Improvements
+
+* Integrate database (MySQL / PostgreSQL)
+* Develop REST API
+* Build graphical user interface (GUI)
+
+---
+
+# Author
+
+Student project for practicing Java programming and software system design.
